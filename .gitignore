@@ -4,9 +4,14 @@ venv/
 __pycache__/
 *.pyc
 
-# Assessment dataset - do not publish
+# Extracted assessment dataset (kept out of Git)
 player_data/
-player_data.zip
+
+# Compressed dataset for Streamlit Cloud deployment
+!player_data.zip
+
+# Exclude nested environment
+player_data/.venv/
 
 # Backup files
 app_backup.py
@@ -20,3 +25,6 @@ app_backup.py
 
 # Old application code
 app.txt
+
+# Mac metadata
+.DS_Store

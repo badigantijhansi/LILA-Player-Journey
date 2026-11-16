@@ -1,3 +1,4 @@
+
 import streamlit as st
 import duckdb
 import plotly.graph_objects as go
@@ -5,7 +6,21 @@ from PIL import Image
 from pathlib import Path
 import base64
 import io
+import zipfile
 from datetime import timedelta
+
+# Automatically extract the dataset on Streamlit Cloud
+DATA_ZIP = Path("player_data.zip")
+DATA_ROOT = Path("player_data")
+
+if not DATA_ROOT.exists():
+    if DATA_ZIP.exists():
+        with zipfile.ZipFile(DATA_ZIP, "r") as archive:
+            archive.extractall(".")
+    else:
+        st.error("Dataset not found. Please check player_data.zip.")
+        st.stop()
+
 
 # -----------------------------------
 # 1. APPLICATION CONFIGURATION
