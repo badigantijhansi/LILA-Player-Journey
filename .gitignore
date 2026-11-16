@@ -1,0 +1,22 @@
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Assessment dataset - do not publish
+player_data/
+player_data.zip
+
+# Backup files
+app_backup.py
+
+# Temporary files
+*.tmp
+*.log
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Old application code
+app.txt
